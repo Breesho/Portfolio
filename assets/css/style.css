@@ -1,0 +1,349 @@
+@charset "utf-8";
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
+div,
+header,
+nav,
+article,
+section,
+aside,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+figure,
+figcaption,
+class,
+img {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+}
+main {
+  overflow: hidden;
+}
+img,
+object,
+embed,
+canvas,
+video,
+audio,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+* {
+  box-sizing: border-box;
+}
+::selection {
+  background-color: #beebe9;
+  color: white;
+}
+html,
+body {
+  border: 0 solid transparent;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 200%;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  color: black;
+  transition: all 0.5s;
+  position: relative;
+}
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
+/* ------------------------------- FIN RECURENTES -- */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  transition: ease-in-out 0.5s;
+  z-index: 50;
+}
+header a.logo-Acc {
+  width: 30%;
+  height: 50px;
+}
+header a.logo-Acc svg {
+  width: 80px;
+  height: 50px;
+}
+header a.logo-Acc svg .cls-1 {
+  fill: white;
+}
+header a.logo-Acc svg .cls-2 {
+  fill: white;
+}
+header nav#navdesktop {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
+header nav#navdesktop ul {
+  display: flex;
+  flex-direction: row;
+  line-height: 50px;
+}
+header nav#navdesktop ul li {
+  margin-right: 2rem;
+  list-style: none;
+  text-decoration: none;
+}
+header nav#navdesktop ul li a {
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  font-weight: 600;
+}
+header nav#navdesktop ul li a::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: b #beebe9;
+  position: absolute;
+  left: -100%;
+  bottom: 50%;
+  border-radius: 25px;
+  transition: all 0.5ss;
+}
+header nav#navdesktop ul li a:hover {
+  display: block;
+}
+header nav#navdesktop ul li a:hover::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: #beebe9;
+  position: absolute;
+  left: 0%;
+  bottom: 50%;
+  transition: all 0.5s;
+  border-radius: 25px;
+}
+header nav#navtablet {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+header nav#navtablet #burger {
+  z-index: 99999;
+  width: 50px;
+  height: 50px;
+  right: 5%;
+  display: none;
+  position: absolute;
+}
+header nav#navtablet #burger #button_burger {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+}
+header nav#navtablet #burger #button_burger span {
+  background-color: white;
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 110%;
+  border-radius: 5px;
+  left: 0;
+  transition: 1s ease-in-out;
+}
+header nav#navtablet #burger #button_burger span:nth-of-type(1) {
+  transform-origin: left center;
+  top: 0;
+}
+header nav#navtablet #burger #button_burger span:nth-of-type(2) {
+  transform-origin: left center;
+  bottom: 20px;
+}
+header nav#navtablet #burger #button_burger span:nth-of-type(3) {
+  transform-origin: left center;
+  bottom: 0;
+}
+header nav#navtablet .style-click #button_burger span:nth-of-type(1) {
+  background-color: white!important;
+  top: 0;
+  transform: rotate(45deg);
+}
+header nav#navtablet .style-click #button_burger span:nth-of-type(2) {
+  background-color: white!important;
+  width: 0%!important;
+  transition: 0.5s !important;
+}
+header nav#navtablet .style-click #button_burger span:nth-of-type(3) {
+  bottom: 0;
+  background-color: white!important;
+  transform: rotate(-45deg);
+}
+header nav#navtablet #menu_burger {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -150%;
+  transition: all 1s;
+  background-color: #beebe9;
+  justify-content: center;
+  align-items: center;
+}
+header nav#navtablet .open_menu {
+  right: 0%!important;
+  transition: all 1s;
+}
+.header-scroll {
+  background-color: #396afc;
+  box-shadow: 0px 3px 21px -13px rgba(0, 0, 0, 0.75);
+  transition: ease-in-out 0.25s;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+section#me {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(to top, #396afc, #2948ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+section#me div#social {
+  position: absolute;
+  left: 4.5rem;
+  bottom: 3rem;
+}
+section#me div#social ul li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+section#me div#social ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+section#me div#social ul li a i {
+  font-size: 1.5rem;
+}
+section#me div#social ul li a i:hover {
+  color: #beebe9;
+}
+section#me div.container-flex {
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  padding-left: 20rem;
+  align-items: center;
+  display: flex;
+}
+section#me div.container-flex div#pres {
+  width: 100%;
+}
+section#me div.container-flex div#pres h1 {
+  font-size: 8rem;
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  line-height: 8rem;
+  color: white;
+}
+section#me div.container-flex div#pres h2 {
+  display: block;
+  padding-right: 25rem;
+  color: white;
+  font-weight: 400;
+}
+section#me div#container-mouse {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section#me div#container-mouse div#mouse {
+  width: 1.8rem;
+  height: 3rem;
+  border: white 2.5px solid;
+  border-radius: 60px;
+  margin: 0 auto;
+}
+section#me div#container-mouse div#mouse::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 50%;
+  opacity: 1;
+  animation: mouse 2s infinite;
+}
+@keyframes mouse {
+  0% {
+    opacity: 1;
+    top: 10px;
+  }
+  100% {
+    opacity: 0;
+    top: 50px;
+    width: 0;
+    height: 0;
+  }
+}
+section#me div#container-mouse p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  header nav#navdesktop {
+    display: none;
+  }
+  header nav#navtablet {
+    display: block;
+  }
+  header nav#navtablet #burger {
+    display: block;
+  }
+  header nav#navtablet #menu_burger {
+    display: block;
+  }
+  section#me div.container-flex {
+    padding-left: 0;
+  }
+}
